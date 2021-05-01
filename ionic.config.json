@@ -1,0 +1,7 @@
+{
+  "name": "lapiragua",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

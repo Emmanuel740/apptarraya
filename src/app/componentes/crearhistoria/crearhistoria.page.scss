@@ -1,0 +1,94 @@
+ion-title.titulo{
+    --color: #004F5E;
+    font-weight: bold;
+}
+ion-back-button.btn{
+    --color: #004F5E;
+}
+ion-content.background{
+    --background: url(/assets/imagenes/bg_grunge.png) 0 0/100% 100% no-repeat;
+    
+    
+}
+.sinIMG{
+    color: white;
+    font-size: 22px;
+}
+.foto{
+    height: 50px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 5px;
+}
+.fotodown{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-top: 10px;
+    float: right;
+    margin-block-end: 10px;
+}
+.slideimg{
+   height: 150px;
+   border-radius: 4px;
+   margin-bottom: 25px;
+
+}
+.lab{
+    color:#004F5E;
+    font-size: 14px;
+    font-weight:bold;
+    margin-left: 10px;
+}
+.labp{
+    color:#004F5E;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.labin{
+    color:#004F5E;
+   
+}
+ion-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ion-button.guardar{
+  --background: #6bb4c4; 
+  margin-top: 20px;
+  
+  width: 90%;
+  margin-block-end: 10px;
+}
+ion-content {
+    #map {
+      width: 100%;
+      height: 70%;
+      
+      opacity: 0;
+      transition: opacity 150ms ease-in;
+      display: block;
+      &.show-map{
+        opacity: 1;
+      }
+      
+    }
+  }
+  .controls {
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    height: 29px;
+    margin-left: 2%;
+    margin-top: 10px;
+    outline: none;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 96%;
+    height: 7%;
+  }

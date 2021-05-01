@@ -1,0 +1,27 @@
+.f{
+    color: #004F5E;
+}
+ion-title.titulo{
+--color: #004F5E;
+font-weight: bold;
+}
+ion-back-button.back{
+    --color: #004F5E;
+
+}
+ion-content.background{
+    --background: url(/assets/imagenes/bg_grunge.png) 0 0/100% 100% no-repeat;
+    
+    
+}
+ion-content.qr{
+    margin-top: 80px;
+}
+ion-button{
+    --background: #004F5E;
+    font-weight: bold;
+}
+.video{
+ width: 90%;
+ height: 40%;
+}

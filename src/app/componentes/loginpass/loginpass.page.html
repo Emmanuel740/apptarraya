@@ -1,0 +1,25 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content class="background">
+  <div style="text-align: center;">
+    <img style="height: 200px;" src="../assets/imagenes/Logo_Apptarraya.png">
+  </div>
+  <div style="text-align: center; font-size: 16px;">
+    <h1>Validación de Cuenta</h1>
+    <p>La cuenta con el correo electronico <a style="font-weight: bold;">{{user.email}}</a> ya esta en uso, 
+      es necesario que ingreses la contraseña para continuar</p>
+  </div>
+  <ion-item>
+    <ion-label>
+        <ion-icon name="key-outline"></ion-icon>
+    </ion-label>
+    <ion-input placeholder="Contraseña"  id="contraseña" type="password" value="{{password}}" [(ngModel)]="password" #passwordEyeRegister [type]="passwordTypeInput" clearOnEdit="false"></ion-input>
+    <button item-end class="btn_eye_icon" (click)="togglePasswordMode()">
+  <ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+</button>
+</ion-item>
+<ion-button color="success" (click)="login()">Validar</ion-button>
+
+</ion-content>

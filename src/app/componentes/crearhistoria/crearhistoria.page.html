@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-back-button class="btn" default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">CREAR HISTORIA</ion-title>
+    <ion-buttons slot="end">
+        <ion-button class="btn" (click)="crearHistoria()">Guardar</ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  
+  <div style="text-align: center; margin-top: 20px;">
+    <!-- <img style="height: 70px;" *ngIf="base64Image === ''" src="{{img}}"> -->
+    <img style="height: 80px;" *ngIf="base64Image === ''" src="../assets/imagenes/logo_full.png">
+
+    <img style="height: 150px; border-radius: 4px;" (click)="verFotos(img)" id="img" src="{{img}}">
+    <p class="sinIMG" *ngIf="base64Image === ''">SIN IMAGEN</p>
+  </div>
+ 
+  <img class="foto" (click)="fotoGaleria()" src="../assets/imagenes/ico-galeria.png">
+  <img class="foto" (click)="hacerFoto()" src="../assets/imagenes/ico-camara.png">
+  <br><br><br><br><br><br>
+  <p class="lab" position="stacked">¿Que nombre deseas darle a esta historia?</p>
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Que nombre deseas darle a esta historia?</ion-label> -->
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">¿Cuando sucedio?</p>
+
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Cuando sucedio?</ion-label> -->
+    <ion-input [(ngModel)]="year"></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">¿Que lugar ayudaras a salvar del "olvido"?</p>
+
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Que lugar ayudaras a salvar del "insomnio"?</ion-label> -->
+    <ion-input [(ngModel)]="ciudad" ></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">Marca la ubicacion geográfica de esta historia</p>
+  <p class="labp">(Presiona sobre el lugar que quieras elegir)</p>
+  <div>
+    
+  </div>
+  <input style="  position:absolute; z-index: 1;" 
+   id="pac-input"
+  class="controls"
+  type="text"
+  placeholder="Buscar lugares">
+  <div #map id="map">
+
+  </div>
+  <!-- <img class="foto" (click)="seleccionarUbicacion()" src="../assets/imagenes/ico-definir-ubicacion.png"> -->
+
+  <p class="lab" position="stacked">Cuentanos tu historia</p>
+
+  <ion-item style="margin-top: 20px;">
+    <!-- <ion-label class="labin" position="stacked">Cuentanos tu historia</ion-label> -->
+    <ion-textarea [(ngModel)]="descripcion">
+    </ion-textarea>
+  </ion-item>
+  <p class="lab" position="stacked">Añadir elementos</p>
+  <div style="text-align: center; ">
+    <div *ngIf="fotos.length > 0">
+      <ion-slides pager="true" #slides [options]="slideOpts">
+        <ion-slide *ngFor="let foto of fotosMostrar index as i">
+          <!-- <img class="slideimg"  src="{{foto}}"> -->
+          <img *ngIf="foto.tipo === 'imagen'" (click)="verFotos(foto.src)" class="slideimg" src="{{foto.src}}">
+          <video *ngIf="foto.tipo === 'video'" class="slideimg" src="{{foto.src}}" preload controls poster="../assets/imagenes/tarraya.png"></video>
+          <audio *ngIf="foto.tipo === 'audio'" class="slideimg" controls src="{{foto.src}}" preload> </audio>
+         <br>
+          <!-- <p style="margin-top: 10px;">{{i+1}} de {{fotosMostrar.length}}</p> -->
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <ion-chip style="margin: auto;" *ngIf="estatusAudio === 'grabando'">
+      <ion-label><ion-icon name="mic-outline"></ion-icon>Grabando audio...</ion-label>
+    </ion-chip>
+    <br>
+    <img class="fotodown" *ngIf="estatusAudio === ''" (click)="captureAudio()" src="../assets/imagenes/ico-audio.png">
+    <img class="fotodown" *ngIf="estatusAudio === 'grabando'" (click)="stopAudio()" src="../assets/imagenes/ico-grabando.png">
+    <img class="fotodown" (click)="presentActionSheet()" src="../assets/imagenes/ico-camara.png">
+    <!-- <ion-button class="guardar" (click)="crearHistoria()">Guardar</ion-button> -->
+  </div>
+</ion-content>

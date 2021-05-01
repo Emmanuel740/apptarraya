@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">MI PERFIL</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="btn" (click)="rediredtEditar()">Editar</ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="centro">
+  <img src="{{ProfileImage}}" id="img" *ngIf="ProfileImage" class="imgRedonda"> 
+  
+  <p class="usr">{{user.name}}</p>
+  <br>
+  <p class="email">Correo Electronico</p>
+  <p class="emailval">{{user.email}}</p>
+  <p class="email">Descripcion</p>
+  <p class="emailval">{{description}}</p>
+  <ion-button class="r" routerLink="/mishistorias">MIS HISTORIAS</ion-button>
+</div>
+</ion-content>

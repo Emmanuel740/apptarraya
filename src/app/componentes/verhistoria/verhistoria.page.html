@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href class="back"></ion-back-button>
+
+    </ion-buttons>
+    <ion-title class="tit">HISTORIA</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div style="text-align: center; margin-top: 20px;">
+    <img style="height: 150px; border-radius: 4px;" (click)="verFotos(image)" *ngIf="historia.featured_image !== ''" src="{{image}}">
+    <img style="height: 100px;" id="img" *ngIf="historia.featured_image === ''" src="../assets/imagenes/logo_full.png">
+    <p class="sinIMG" *ngIf="historia.featured_image === ''">SIN IMAGEN</p>
+    <p class="titulo">{{historia.name}}</p>
+  </div>
+  <p class="name">{{historia.location_name}} {{historia.year}}</p>
+  <!-- <p class="descripcion">{{historia.description}}</p> -->
+  <div class="descripcion" id="desc"></div>
+  <p class="user" *ngIf="historia.user_profile">por {{name}}</p>
+  <!-- <p class="lab" position="stacked" *ngIf="files.length > 0">Elementos</p> -->
+  <div style="text-align: center; ">
+    <div *ngIf="files.length > 0">
+      <ion-slides pager="true" #slides [options]="slideOpts" >
+        <ion-slide *ngFor="let file of files">
+          <img (click)="verFotos(file)" id="imagen" *ngIf="(file.substr(file.lastIndexOf('.') + 1)).toLowerCase() === 'jpg'" class="slideimg" src="{{file}}">
+          <video *ngIf="(file.substr(file.lastIndexOf('.') + 1)).toLowerCase() === 'mp4' || (file.substr(file.lastIndexOf('.') + 1)).toLowerCase() === 'amr'" class="slideimg" src="{{file}}" poster="../assets/imagenes/tarraya.png" controls preload></video>
+          <audio *ngIf="(file.substr(file.lastIndexOf('.') + 1)).toLowerCase() === 'm4a' || (file.substr(file.lastIndexOf('.') + 1)).toLowerCase() === 'mp3'" class="audio" src="{{file}}" controls preload></audio>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>

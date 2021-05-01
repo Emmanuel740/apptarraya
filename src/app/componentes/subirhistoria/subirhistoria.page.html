@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-back-button class="btn" default-href="" (click)="modal.dismiss()" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">SUBIR HISTORIA</ion-title>
+    <ion-buttons slot="end">
+        <ion-button class="btn" (click)="checarInternet()">Guardar</ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div style="text-align: center; margin-top: 20px;">
+    <!-- <img style="height: 70px;" *ngIf="base64Image === ''" src="{{img}}"> -->
+    <img style="height: 80px;" *ngIf="base64Image === ''" src="../assets/imagenes/logo_full.png">
+
+    <img style="height: 70px;" id="img" src="{{img}}">
+    <p class="sinIMG" *ngIf="base64Image === ''">SIN IMAGEN</p>
+  </div>
+ 
+  <img class="foto" (click)="fotoGaleria()" src="../assets/imagenes/ico-galeria.png">
+  <img class="foto" (click)="hacerFoto()" src="../assets/imagenes/ico-camara.png">
+  <br><br><br><br><br><br>
+  <p class="lab" position="stacked">¿Que nombre deseas darle a esta historia?</p>
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Que nombre deseas darle a esta historia?</ion-label> -->
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">¿Cuando sucedio?</p>
+
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Cuando sucedio?</ion-label> -->
+    <ion-input [(ngModel)]="year"></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">¿Que lugar ayudaras a salvar del "insomnio"?</p>
+
+  <ion-item>
+    <!-- <ion-label class="labin" position="stacked">¿Que lugar ayudaras a salvar del "insomnio"?</ion-label> -->
+    <ion-input [(ngModel)]="ciudad"></ion-input>
+  </ion-item>
+  <p class="lab" position="stacked">Marca la ubicacion geográfica de esta historia</p>
+  <p class="labp">(Arrastra el marker a la posicion que desees)</p>
+  <div>
+    
+  </div>
+  <div #map id="map">
+
+  </div>
+  <p class="lab" position="stacked">Cuentanos tu historia</p>
+
+  <ion-item style="margin-top: 20px;">
+    <!-- <ion-label class="labin" position="stacked">Cuentanos tu historia</ion-label> -->
+    <ion-textarea [(ngModel)]="descripcion">
+    </ion-textarea>
+  </ion-item>
+  <p class="lab" position="stacked">Añadir elementos</p>
+  <div style="text-align: center; ">
+    <div *ngIf="fotos.length > 0">
+      <ion-slides pager="true" #slides [options]="slideOpts">
+        <ion-slide *ngFor="let foto of fotosMostrar">
+          <img class="slideimg" src="{{foto}}">
+          <img *ngIf="foto.tipo === 'imagen'" (click)="verFotos(foto.src)" class="slideimg" src="{{foto.src}}">
+          <video *ngIf="foto.tipo === 'video'" class="slideimg" src="{{foto.src}}" preload controls poster="../assets/imagenes/tarraya.png"></video>
+          <audio *ngIf="foto.tipo === 'audio'" class="slideimg" controls src="{{foto.src}}" preload> </audio>
+         <br>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <img class="fotodown" *ngIf="estatusAudio === ''" (click)="captureAudio()" src="../assets/imagenes/ico-audio.png">
+    <img class="fotodown" *ngIf="estatusAudio === 'grabando'" (click)="stopAudio()" src="../assets/imagenes/ico-grabando.png">
+    <img class="fotodown" (click)="presentActionSheet()" src="../assets/imagenes/ico-camara.png">
+    
+    <!-- <ion-button class="guardar" (click)="checarInternet()">Guardar</ion-button> -->
+
+  </div>
+</ion-content>

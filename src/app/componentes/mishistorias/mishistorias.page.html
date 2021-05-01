@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">MIS HISTORIAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <div class="top" style="text-align: center;">
+    <p style="color: white; font-size: 20px; margin-top: 20px; font-weight: bold;">Historias en la piragua</p>
+    
+  </div>
+  <ion-slides  #slides [options]="slideOpts" [pager]="false">
+    <ion-slide *ngFor="let historia of Mishistorias index as i" >
+      <ion-card  >
+        <ion-card-content class="back">
+          <img (click)="verHistoria(historia.id)" style="height: 200px; border-radius: 4px;" *ngIf="!historia.featured_image" src="../assets/imagenes/default_image.png">
+          <img (click)="verHistoria(historia.id)" style="height: 200px; border-radius: 4px;" *ngIf="historia.featured_image"  src="{{fotos[i]}}">
+        <div style="text-align: left; margin-block-end: 10px;">
+        <ion-card-title class="texto-titulo">{{historia.name}}<button (click)="AlertBorrar(historia.id)" ><ion-icon name="trash-outline"></ion-icon></button>
+        </ion-card-title>
+          <ion-card-subtitle class="texto-titulo" >{{historia.user_profile.name}}</ion-card-subtitle>
+          <ion-card-subtitle class="texto-derecha" >{{i+1}} de {{lon}}</ion-card-subtitle>
+        </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  
+</ion-content>

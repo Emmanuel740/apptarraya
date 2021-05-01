@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">EXPLORAR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div>
+    <input style="  position:absolute; z-index: 1;" 
+   id="pac-input"
+  class="controls"
+  type="text"
+  placeholder="Buscar lugares" [(ngModel)]="busqueda">
+  
+    <div id="map">
+    </div>
+    
+    <!-- <ion-list *ngIf="busqueda">
+      <div *ngFor="let story of stories | filter:busqueda">   
+      <ion-item  (click)="SeleccionarHistoria(story)">
+        {{story.name}}
+      </ion-item>
+    </div>
+    </ion-list> -->
+    <!-- <img class="foto3" src="../assets/imagenes/ico-audio.png">
+    <img class="foto2" src="../assets/imagenes/ico-video.png">
+    <img class="foto1" src="../assets/imagenes/ico-camara.png"> -->
+    <img class="foto" (click)="search()" src="../assets/imagenes/ico-search-mapa.png">
+  
+  </div>
+ 
+</ion-content>

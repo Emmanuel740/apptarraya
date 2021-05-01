@@ -1,0 +1,51 @@
+.f{
+    color: #004F5E;
+  }
+  ion-title.titulo{
+  --color: #004F5E;
+  font-weight: bold;
+  }
+  ion-back-button.back{
+    --color: #004F5E;
+  
+  }
+  ion-content.background{
+    --background: url(/assets/imagenes/bg_grunge.png) 0 0/100% 100% no-repeat;
+    
+    
+}
+ion-button.btn{
+    --color: #004F5E;
+}
+.imgRedonda {
+    width:150px;
+    height:150px;
+    border-radius:75px;
+    margin-top: 30px;
+}
+.centro{
+text-align: center;}
+.usr{
+    margin-top: 25%;
+    font-size: 22px;
+    color: #004F5E;
+    font-weight: bold;
+   
+}
+.email{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #004F5E;
+    font-weight: bold;
+
+}
+.emailval{
+    font-size: 14px;
+    color: #004F5E;
+
+}
+ion-button.r{
+    --background:#004F5E;
+    font-weight: bold;
+    margin-top: 30px;
+}

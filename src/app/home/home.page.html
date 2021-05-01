@@ -1,0 +1,75 @@
+<ion-app>
+  <ion-menu side="start" content-id="main-content" menuId="first" color="primary">
+    <!-- <ion-header [translucent]="true">
+        <ion-toolbar translucent color="primary">
+            <ion-title style="font-weight: bold;">Menu</ion-title>
+        </ion-toolbar>
+    </ion-header> -->
+
+    <ion-content [fullscreen]="true" class="back">
+            <div style="text-align: right;">
+             <img style="height: 40px; margin-top: 10px; margin-right: 10px;" (click)="cerrar()" src="../assets/imagenes/close@2x.png">
+            </div>
+            <div style="text-align: center;">
+            <!-- <img src="{{PorfileImage}}" class="imgRedonda"> 
+            <p class="userName">{{user.name}}</p> -->
+            <!-- <img src="../assets/imagenes/tarraya.png" class="imgRedonda">  -->
+            <img src="../assets/imagenes/user.png" *ngIf="imagen === ''" id="img" class="imgRedonda"> 
+            <img src="{{PorfileImage}}" *ngIf="imagen !== ''" id="img" class="imgRedonda"> 
+
+            <p class="userName">{{name}}</p>
+            </div>
+           
+            <p (click)="explorar()" >EXPLORAR</p>
+            <p  routerLink='/pescarhistorias' >PESCAR</p>
+            <p  routerLink='/mishistorias' >MIS HISTORIAS</p>
+            <p  (click)="perfil()" >MI PERFIL</p>
+            <!-- <p  routerLink='/prueba' >PRUEBA</p> -->
+
+            <div style="text-align: center; margin-top: 40px;">
+              <ion-button (click)="cerrarSesion()">CERRAR SESIÓN</ion-button>
+
+            </div>
+
+
+    </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+      <ion-toolbar color="none">
+          <ion-buttons slot="start" >
+              <ion-menu-button color="light"></ion-menu-button>
+          </ion-buttons>
+          
+      </ion-toolbar>
+  </ion-header>
+  
+
+<ion-content [fullscreen]="true" class="background">
+  <div style="text-align: center;">
+    <img style="height: 150px; margin-top: 10px;" src="../assets/imagenes/Logo_Apptarraya.png">
+  
+  </div>
+  <br>
+  <br>
+  <br><br><br>
+ 
+  
+  <div style="text-align: center;">
+    <img (click)="explorar()" style="height: 35px;"  src="../assets/imagenes/icon_explorar.png" >
+
+  <div style="position: relative; ">
+    <img  src="../assets/imagenes/compass.png" class="heaven">
+    <img  src="../assets/imagenes/compass_needle.png"  class="eye">
+    <img routerLink='/mishistorias'  src="../assets/imagenes/icon_mis_historias.png" class="eye1" >
+
+    <img routerLink='/pescarhistorias'  src="../assets/imagenes/icon_pescar.png" class="eye2" >
+    <img routerLink='/realidadaumentada' src="../assets/imagenes/icon_ra.png" class="eye3" >
+
+  </div>
+
+</div>
+  
+</ion-content>
+</div>
+</ion-app>

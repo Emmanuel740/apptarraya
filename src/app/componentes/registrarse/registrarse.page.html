@@ -1,0 +1,48 @@
+<ion-header>
+ 
+</ion-header>
+
+<ion-content class="background">
+  <div style="text-align: center;">
+    <img style="height: 180px;" src="../assets/imagenes/Logo_Apptarraya.png">
+    <p style="color: white; font-size: 14px; font-weight: bold;">Ingresa tus datos de inicio de sesión</p>
+  </div>
+ <div class="centro">
+  <ion-item>
+   
+    <ion-input placeholder="Nombre"  [(ngModel)]="name"></ion-input>
+</ion-item>
+<ion-item>
+   
+  <ion-input placeholder="Nombre de usuario"  [(ngModel)]="username"></ion-input>
+</ion-item>
+<ion-item>
+   
+  <ion-input placeholder="Correo electronico"  [(ngModel)]="email"></ion-input>
+</ion-item>
+<ion-item>
+  
+  <ion-input placeholder="Contraseña"  id="contraseña" type="password" value="{{password}}" [(ngModel)]="password" #passwordEyeRegister [type]="passwordTypeInput" clearOnEdit="false"></ion-input>
+  <button item-end class="btn_eye_icon" (click)="togglePasswordMode()">
+<ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+</button>
+</ion-item>
+<ion-item>
+  
+  <ion-input placeholder="Confirmar contraseña"  id="contraseña" type="password" value="{{confirmacionpassword}}" [(ngModel)]="confirmacionpassword" #passwordEyeRegister [type]="passwordTypeInput" clearOnEdit="false"></ion-input>
+  <button item-end class="btn_eye_icon" (click)="togglePasswordMode()">
+<ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+</button>
+</ion-item>
+
+
+<ion-button (click)="RegistrarUsuario()"  >crear cuenta</ion-button>
+<div class="link">
+  <a routerLink='/login' style=" color: #646568;font-size: 16px; font-weight: bold;" routerLinkActive='router-link-active'>INICIAR SESIÓN</a>
+
+</div>
+<!-- <div class="link">
+<a (click)='redirect()' style="  color: #646568;font-size: 14px; font-weight: bold;" routerLinkActive='router-link-active'>IR A MODO OFFLINE</a>
+</div> -->
+</div> 
+</ion-content>

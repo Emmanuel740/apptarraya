@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">REALIDAD AUMENTADA</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <div style="text-align: center;">
+    <img style="height: 200px;" src="../assets/imagenes/Logo_Apptarraya.png">
+    <!-- <p style=" font-size: 14px; margin-top: 70px; font-weight: bold;">PROXIMAMENTE</p> -->
+    <br><br><br><br><br><br>
+    <!-- <ngx-qrcode 
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  alt="Demo QR Code"
+  cssClass="qr"></ngx-qrcode> -->
+  <div style="text-align: center;">
+    <ion-button (click)="Escanear()" *ngIf="!Mostrar">Escanear </ion-button>
+
+  </div>
+  <video *ngIf="Mostrar"  class="video" src="../assets/LAPIRAGUA.mp4" preload controls autoplay poster="../assets/imagenes/poster_video.png"></video>
+
+  </div>
+  
+  </ion-content>

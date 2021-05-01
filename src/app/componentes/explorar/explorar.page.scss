@@ -1,0 +1,113 @@
+ion-content {
+  #map {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 150ms ease-in;
+    display: block;
+    &.show-map{
+      opacity: 1;
+    }
+    
+  }
+}
+.icono{
+  
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  top: 80px;
+  left: 80%;
+}
+
+.foto{
+  position:absolute;
+  z-index: 1;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  top: 85%;
+  left: 1%;
+}
+.foto1{
+position:absolute;
+z-index: 1;
+height: 50px;
+border-radius: 50%;
+display: block;
+float: left;
+margin-right: 5px;
+top: 75%;
+}
+.foto2{
+position:absolute;
+z-index: 1;
+height: 50px;
+border-radius: 50%;
+display: block;
+float: left;
+margin-right: 5px;
+top: 65%;
+}
+.foto3{
+position:absolute;
+z-index: 1;
+height: 50px;
+border-radius: 50%;
+display: block;
+float: left;
+margin-right: 5px;
+top: 55%;
+}
+.f{
+color: #004F5E;
+}
+ion-title.titulo{
+--color: #004F5E;
+font-weight: bold;
+}
+ion-back-button.back{
+--color: #004F5E;
+
+}
+ion-content.background{
+--background: rgb(185, 180, 180);
+
+}
+ion-item{
+margin-right: 10px;
+--height: 7%;
+
+}
+.controls {
+background-color: #fff;
+border-radius: 2px;
+border: 1px solid transparent;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+box-sizing: border-box;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 300;
+height: 29px;
+margin-left: 2%;
+margin-top: 10px;
+outline: none;
+padding: 0 11px 0 13px;
+text-overflow: ellipsis;
+width: 96%;
+height: 7%;
+position:absolute; 
+z-index: 1;
+}
+ion-list{
+position:absolute;
+z-index: 1;
+top: 10%;
+width: 96%;
+left: 2%;
+
+}

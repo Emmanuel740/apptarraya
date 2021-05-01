@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="explorar" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">LISTA DE HISTORIAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar historias" [(ngModel)]="busqueda"></ion-searchbar>
+  <ion-card *ngFor="let historia of listaHistorias|filter:busqueda" (click)="verHistoria(historia.id)">
+    <ion-card-content>
+      <ion-card-subtitle style="font-weight: bold;">
+          {{historia.name}}
+      </ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

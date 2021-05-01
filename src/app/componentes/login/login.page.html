@@ -1,0 +1,72 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content class="background">
+  <!-- <div style="height: 100%; width: 100%; background-image: '/src/assets/imagenes/logo_lapiragua_blanco.png'; ">
+  </div> -->
+  
+  
+ 
+      
+          <div class="body">
+            <div style="text-align: center;">
+              <img style="height: 180px; margin-top: 20px;" src="../assets/imagenes/Logo_Apptarraya.png">
+            </div>
+              <div style="margin-top: 90px">
+                  
+                  
+                  <!-- <ion-img src="../assets/Logo1.png"></ion-img> -->
+
+  
+  
+                  <ion-item>
+                      <ion-label>
+                          <ion-icon name="person-outline"></ion-icon>
+                      </ion-label>
+                      <ion-input placeholder="Correo electronico" value="{{usuario}}" [(ngModel)]="usuario"></ion-input>
+                  </ion-item>
+  
+                  <ion-item>
+                      <ion-label>
+                          <ion-icon name="key-outline"></ion-icon>
+                      </ion-label>
+                      <ion-input placeholder="Contraseña"  id="contraseña" type="password" value="{{password}}" [(ngModel)]="password" #passwordEyeRegister [type]="passwordTypeInput" clearOnEdit="false"></ion-input>
+                      <button item-end class="btn_eye_icon" (click)="togglePasswordMode()">
+                    <ion-icon  [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+                </button>
+                  </ion-item>
+                  <!--
+        <ion-item class="tog">
+            <ion-label class="contra">Mostrar Contraseña</ion-label>
+            <ion-toggle color="primary" [(ngModel)]="mostrarContrasena" (click)="mostrarcon()"></ion-toggle>
+        </ion-item>-->
+                  <br>
+                  <!-- <a style="margin-left: 132px; margin-top: 20px; color: #646568;font-size: 16px;" (click)='redirectRecuperar()' routerLinkActive='router-link-active'>Olvide mí Contraseña</a> -->
+                  <div style="text-align: center;">
+                    <a style=" color: #646568;" (click)="openResetPassword()"><u>Olvide mí contraseña</u></a> 
+
+                  </div>
+                  <ion-button  (click)='validarCampos()'>Iniciar sesión</ion-button>
+                  <br>
+                  <div style="text-align: center; margin-top: 20px;">
+                    <a (click)='redirectCrearCuenta()' style=" color: #646568;font-size: 16px; font-weight: bold;" routerLinkActive='router-link-active'>CREAR CUENTA</a>
+                    <P style="color: #646568;font-size: 16px; margin-top: 20px;">TAMBIEN PUEDES INGRESAR CON</P>
+                    <img style="height: 50px;" (click)="loginWithFB()" src="../assets/imagenes/logoFacebook.png">
+
+                    <img style="height: 50px;" (click)="loginGoogle()" src="../assets/imagenes/logoGoogle.jpg">
+                    <br>
+                    
+                    <!-- <a (click)='redirectOffline()' style=" color: #646568;font-size: 14px; font-weight: bold;" routerLinkActive='router-link-active'>IR A MODO DESCONECTADO</a> -->
+
+
+                  </div>
+  
+              </div>
+  
+          </div>
+  
+    
+  
+  
+</ion-content>

@@ -1,0 +1,40 @@
+.f{
+    color: #004F5E;
+}
+ion-title.titulo{
+--color: #004F5E;
+font-weight: bold;
+}
+ion-back-button.back{
+    --color: #004F5E;
+
+}
+ion-content.background{
+    --background: url(/assets/imagenes/bg_grunge.png) 0 0/100% 100% no-repeat;
+    
+    
+}
+.center{
+  margin-top: 20%;
+  font-size: 16px;
+  color: #004F5E; 
+  text-align: center;
+  font-weight: bold;
+}
+ion-button{
+    --background: #004F5E;
+    font-weight: bold;
+   
+}
+ion-card{
+width: 200px;
+}
+p{
+    font-weight: bold;
+    font-size: 14px;
+    color: #004F5E;
+    margin-top: 20%;
+}
+ion-card-title{
+    font-weight: bold;
+}

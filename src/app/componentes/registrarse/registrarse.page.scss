@@ -1,0 +1,39 @@
+ion-content.background{
+    --background: url(/assets/imagenes/bg_grunge.png) 0 0/100% 100% no-repeat;
+    
+    
+}
+
+.centro {
+        width: 300px;
+        margin: auto;
+        margin-top: 85px;
+        border-radius: 1%;
+        background-color: none;
+        text-align: center;
+} 
+ion-item{
+}  
+ion-button{
+    width: 300px;
+    --background: #6bb4c4;
+    font-weight: bold;
+
+} 
+.link{
+    margin-top: 25px;
+}
+.btn_eye_icon {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    background: transparent;
+    ion-icon {
+        font-size: 22px;
+        color: #757575;
+    }
+}
+
+.btn_eye_icon:focus {
+    outline: none !important;
+}

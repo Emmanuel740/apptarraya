@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href="home" class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">PESCAR HISTORIAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div style="text-align: center;">
+    <img style="height: 200px;" src="../assets/imagenes/Logo_Apptarraya.png">
+    <p *ngIf="historiasLocales.length > 0">Historias por subir</p>
+
+  </div>
+  <div *ngIf="historiasLocales.length > 0">
+    <ion-slides pager="true" #slides [options]="slideOpts">
+      <ion-slide *ngFor="let historia of historiasLocales index as i">
+        <ion-card (click)="verHistoria(i)">
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title>{{historia.data.name}}</ion-card-title>
+
+            </ion-card-header>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="center">
+    
+<p>Conviertete en un pescador de historias</p>
+<ion-button routerLink='/crearhistoria'>crear historia</ion-button>
+  </div>
+</ion-content>

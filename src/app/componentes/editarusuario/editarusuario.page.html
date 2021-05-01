@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button  class="back"></ion-back-button>
+  </ion-buttons>
+    <ion-title class="titulo">EDITAR PERFIL</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="btn" (click)="close()">Cancelar</ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="cen">
+    <img src="{{img}}" id="img" class="imgRedonda"> 
+
+  </div>
+  <img class="foto" (click)="quitarImagen()" src="../assets/imagenes/ico-eliminar.png">
+  <img class="foto" (click)="fotoGaleria()" src="../assets/imagenes/ico-galeria.png">
+  <img class="foto" (click)="hacerFoto()" src="../assets/imagenes/ico-camara.png">
+  <div class="centro">
+    <ion-item>
+      <ion-label class="lab" position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lab" position="stacked">Nombre de usuario</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lab" position="stacked">Correo electronico</ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lab" position="stacked">Cuentanos sobre ti</ion-label>
+      <ion-textarea [(ngModel)]="descripcion">
+      </ion-textarea>
+    </ion-item>
+    <ion-button class="guardar" (click)="editar()">Guardar</ion-button>
+
+  
+  </div>
+
+</ion-content>
